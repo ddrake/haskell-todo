@@ -8,7 +8,6 @@ main = do
   let (Just action) = lookup command dispatch
   action args
 
-
 dispatch :: [(String, [String] -> IO ())]
 dispatch = [ ("add", add)
            , ("view", view)
@@ -20,7 +19,6 @@ add :: [String] -> IO ()
 add [fileName, todoItem] = do
   appendFile fileName (todoItem ++ "\n")
   view [fileName]
-
 
 view :: [String] -> IO ()
 view [fileName] = do
@@ -57,7 +55,3 @@ modify [fileName, numberString] proc = do
   removeFile fileName
   renameFile tempName fileName
   view [fileName]
-
---bump :: [String] -> IO ()
---bump [fileName, numberString] = do
---  handle <
