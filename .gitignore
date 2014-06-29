@@ -1,0 +1,5 @@
+*.o
+*.hi
+todo.txt
+clean
+todo
